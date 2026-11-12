@@ -14,55 +14,50 @@ A Java-based e-commerce management system built with Hibernate ORM, Jakarta Pers
 
 ## Project Structure
 
-```text
-HibernateEcommerce/
-├── pom.xml
-├── schema.sql
-├── README.md
-└── src/
-    ├── main/
-    │   ├── java/com/example/
-    │   │   ├── Main.java
-    │   │   ├── TestConnection.java
-    │   │   ├── dao/
-    │   │   │   ├── CategoryDAO.java
-    │   │   │   ├── ProductDAO.java
-    │   │   │   ├── UserDAO.java
-    │   │   │   └── OrderDAO.java
-    │   │   ├── entity/
-    │   │   │   ├── Category.java
-    │   │   │   ├── Product.java
-    │   │   │   ├── Users.java
-    │   │   │   ├── Role.java
-    │   │   │   ├── Orders.java
-    │   │   │   └── OrderDetails.java
-    │   │   └── util/
-    │   │       └── HibernateUtil.java
-    │   └── resources/
-    │       └── hibernate.cfg.xml
-    └── test/
-        └── java/com/example/dao/
-            ├── CategoryDAOTest.java
-            ├── ProductDAOTest.java
-            ├── UserDAOTest.java
-            └── OrderDAOTest.java
-
+    HibernateEcommerce/
+    ├── pom.xml
+    ├── schema.sql
+    ├── README.md
+    └── src/
+        ├── main/
+        │   ├── java/com/example/
+        │   │   ├── Main.java
+        │   │   ├── TestConnection.java
+        │   │   ├── dao/
+        │   │   │   ├── CategoryDAO.java
+        │   │   │   ├── ProductDAO.java
+        │   │   │   ├── UserDAO.java
+        │   │   │   └── OrderDAO.java
+        │   │   ├── entity/
+        │   │   │   ├── Category.java
+        │   │   │   ├── Product.java
+        │   │   │   ├── Users.java
+        │   │   │   ├── Role.java
+        │   │   │   ├── Orders.java
+        │   │   │   └── OrderDetails.java
+        │   │   └── util/
+        │   │       └── HibernateUtil.java
+        │   └── resources/
+        │       └── hibernate.cfg.xml
+        └── test/
+            └── java/com/example/dao/
+                ├── CategoryDAOTest.java
+                ├── ProductDAOTest.java
+                ├── UserDAOTest.java
+                └── OrderDAOTest.java
 
 ## Entity Relationships
-Category ↔ Product: One-to-Many / Many-to-One
 
-Users ↔ Orders: One-to-Many / Many-to-One
+- **Category ↔ Product**: One-to-Many / Many-to-One
+- **Users ↔ Orders**: One-to-Many / Many-to-One
+- **Orders ↔ OrderDetails**: One-to-Many / Many-to-One
+- **Product ↔ OrderDetails**: One-to-Many / Many-to-One
 
-Orders ↔ OrderDetails: One-to-Many / Many-to-One
+## Setup Instructions
 
-Product ↔ OrderDetails: One-to-Many / Many-to-One
+1. **Create the MySQL database and schema:**
 
-Setup Instructions
-Create the MySQL database and schema:
-
-SQL
-
-
+```sql
 CREATE DATABASE ecommerce;
 (Optionally import schema.sql directly, or let Hibernate auto-update the tables via hibernate.hbm2ddl.auto=update.)
 
