@@ -48,7 +48,7 @@ HibernateEcommerce/
             └── OrderDAOTest.java
 
 
-Entity Relationships
+## Entity Relationships
 Category ↔ Product: One-to-Many / Many-to-One
 
 Users ↔ Orders: One-to-Many / Many-to-One
